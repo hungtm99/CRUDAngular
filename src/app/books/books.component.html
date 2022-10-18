@@ -1,0 +1,28 @@
+<div class="container">
+    <h2>Danh sách sách</h2>
+    <button class="btn btn-primary" (click)="openModal()">Open modal</button>
+    <div>
+        <br>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th class="text-center">STT</th>
+                    <th>Tên sách</th>
+                    <th>Tên tác giả</th>
+                    <th class="text-center">Giá sách</th>
+                    <th class="text-center">#</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let book of Books; let i = index">
+                <tr>
+                    <td class="text-center">{{i + 1}}</td>
+                    <td>{{ book['title'] }}</td>
+                    <td>{{ book['author'] }}</td>
+                    <td>{{ book['price'] | currency:'VND': 'symbol':'0.0' }}</td>
+                    <td class="text-center"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

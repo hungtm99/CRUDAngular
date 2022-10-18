@@ -1,0 +1,74 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Nói Sao Cho Trẻ Nghe Lời",
+      "author": "Hoa Dương",
+      "price": 30000
+    },
+    {
+      "id": 2,
+      "title": "Poco Ở Thế Giới Udon",
+      "author": "Nodoka Shinomaru",
+      "price": 25000
+    },
+    {
+      "id": 3,
+      "title": "Gửi Em Người Bất Tử",
+      "author": "Yoshitoki Oima",
+      "price": 15000
+    },
+    {
+      "id": 4,
+      "title": "Doraemon Movie Story: Nobita Và Người Khổng Lồ Xanh (Tái Bản 2022)",
+      "author": "Fujiko F Fujio, Yasunori Okada",
+      "price": 1200000
+    },
+    {
+      "id": 5,
+      "title": "Dragon Ball - 7 Viên Ngọc Rồng Tập 33: Ngoại Truyện Về Trunks (Tái Bản 2022)",
+      "author": "Akira Toriyama",
+      "price": 95000
+    },
+    {
+      "id": 6,
+      "title": "Khởi Đầu Mới Là Trở Về Nhà (Tái Bản 2022)",
+      "author": "Cocomi",
+      "price": 36400
+    }
+
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "Sách rất hay",
+      "postId": 1
+    },
+    {
+      "id": 2,
+      "body": "Sách bán đắt quá",
+      "postId": 2
+    },
+    {
+      "id": 3,
+      "body": "Rất tệ",
+      "postId": 3
+    },
+    {
+      "id": 4,
+      "body": "Bình thường, phù hợp với giá",
+      "postId": 4
+    },
+    {
+      "id": 5,
+      "body": "Tuyệt vời",
+      "postId": 5
+    }
+  ],
+  "profile": {
+    "account": {
+      "name": "admin",
+      "password" : "123"
+    }
+  }
+}
