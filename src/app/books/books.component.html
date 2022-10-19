@@ -1,6 +1,40 @@
 <div class="container">
+    <br>
     <h2>Danh sách sách</h2>
-    <button class="btn btn-primary" (click)="openModal()">Open modal</button>
+<!-- MODAL -->
+<ng-template #content let-modal>
+    <form [formGroup] = "formData">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Thông tin sách</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        
+            <div class="mb-3">
+                <label for="title">Tên sách</label>
+                <div class="input-group">
+                    <input id ="title" class="form-control" type="text" formControlName="title" value="{{BookEdit.title}}"/>
+                </div>
+                <label for="author">Tên tác giả</label>
+                <div class="input-group">
+                    <input id="author" class="form-control" type="text"formControlName="author" value="{{BookEdit.author}}"/>
+                </div>
+                <label for="price">Giá sách</label>
+                <div class="input-group">
+                    <input id="price" class="form-control" type="number" formControlName="price" value="{{BookEdit.price}}"/>
+                </div>
+            </div>
+        
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-success" (click)="modal.close('Save click')" [disabled]="!formData.valid">Lưu thông tin</button>
+    </div>
+</form>
+</ng-template>
+<button class="btn btn-outline-primary" (click)="open(content,'')">Thêm sách</button>
+<hr />
+<pre class="badge bg-success">{{ closeResult }}</pre>
+<!-- END MODAL -->
     <div>
         <br>
         <table class="table table-bordered">
@@ -19,10 +53,12 @@
                     <td>{{ book['title'] }}</td>
                     <td>{{ book['author'] }}</td>
                     <td>{{ book['price'] | currency:'VND': 'symbol':'0.0' }}</td>
-                    <td class="text-center"></td>
+                    <td class="text-center">
+                        <a (click)="open(content, book['id'])"><i style="font-size:20px" class="fa fa-pencil"> </i></a> &nbsp;
+                        <a (click)="deletePost(book['id'])"><i style="font-size:20px; color: red;" class="fa fa-trash-o"> </i></a>
+                    </td>
                 </tr>
             </tbody>
         </table>
     </div>
-
 </div>

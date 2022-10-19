@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CommonService } from '../Services/common.service';
 
 @Component({
   selector: 'app-index',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit {
-  public username = "Mạnh Hùng";
-  constructor() { }
+  public taiKhoan = "";
+  constructor(
+    private common: CommonService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+    if(this.common.getTaiKhoan() == ""){
+      this.router.navigate(['/login']);
+    }else{
+      this.taiKhoan = this.common.getTaiKhoan();
+    }
   }
 
 }

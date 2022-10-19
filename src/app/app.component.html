@@ -4,25 +4,15 @@
   <title>CRUD Angular</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <div class="navbar">
+  <div class="navbar" >
     <a routerLink="/index" routerLinkActive="active">Trang chủ</a>
     <a routerLink="/books" routerLinkActive="active">Danh sách sách</a>
-    <a routerLink="/logout" routerLinkActive="active">Đăng xuất</a>
+    <a (click)="logOut()">Đăng xuất</a>
   </div>
   <router-outlet></router-outlet>
 </body>
 </html>
-
-<!-- <div class="subnav">
-  <button class="subnavbtn">Danh sách sách <i class="fa fa-caret-down"></i></button>
-  <div class="subnav-content">
-    <a href="#company">Company</a>
-    <a href="#team">Team</a>
-    <a href="#careers">Careers</a>
-  </div>
-</div>  -->
