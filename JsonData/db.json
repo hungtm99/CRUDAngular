@@ -37,10 +37,16 @@
       "price": 27000
     },
     {
-      "title": "12222",
-      "author": "23333",
-      "price": 34444,
+      "title": "Doremi",
+      "author": "Trần Mạnh Hùng",
+      "price": 34000,
       "id": 8
+    },
+    {
+      "title": "Doremon",
+      "author": "Nguyễn Ngọc Ký",
+      "price": 300000,
+      "id": 9
     }
   ],
   "comments": [

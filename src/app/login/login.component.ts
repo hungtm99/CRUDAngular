@@ -31,16 +31,18 @@ export class LoginComponent implements OnInit {
   }
   public onSubmit():void{
     this.httpServerService.getListUser().subscribe((data:any) =>{
-        
-      this.Users = data['account'];
+      try{
+        this.Users = data['account'];
         for (let i = 0; i < this.Users.length ; i++) {
           if(this.Users[i]['name'] == this.formData.value['taikhoan'] 
               && this.Users[i]['password'] == this.formData.value['matkhau']){
-                
                 this.common.setTaiKhoan(this.Users[i]['name']);
                 this.router.navigate(['/index'])
           }
         }
+      }catch(ex){
+        console.log("Có lỗi xảy ra khi get account");
+      }
     });
   }
 }

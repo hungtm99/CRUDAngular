@@ -30,12 +30,18 @@ export class BooksComponent implements OnInit {
     private router: Router,
     private httpServerService: HttpServerService,
     private modalService: NgbModal, 
-    private formBuilder:FormBuilder
+    private formBuilder:FormBuilder,
+    // private popupBook: PopupBookComponent
+    
   ) {}
 
   open(content:any, id:any) {
     if(id !== ''){
       this.loadDataToModal(id);
+    }else{
+      this.formData.get('title')?.setValue('');
+      this.formData.get('author')?.setValue('');
+      this.formData.get('price')?.setValue('');
     }
 
 		this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
@@ -69,12 +75,12 @@ export class BooksComponent implements OnInit {
 	// }
 
   ngOnInit(): void {
-    // if(this.common.getTaiKhoan() == ""){
-    //   this.router.navigate(['/login']);
-    // }else{
-    //   this.getBooks();
-    // }
-    this.getBooks();
+    if(this.common.getTaiKhoan() == ""){
+      this.router.navigate(['/login']);
+    }else{
+      this.getBooks();
+    }
+    // this.getBooks();
   }
 
   public deletePost(postId:any){

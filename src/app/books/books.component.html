@@ -4,12 +4,11 @@
 <!-- MODAL -->
 <ng-template #content let-modal>
     <form [formGroup] = "formData">
-    <div class="modal-header">
-        <h4 class="modal-title" id="modal-basic-title">Thông tin sách</h4>
-        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-    </div>
-    <div class="modal-body">
-        
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Thông tin sách</h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
             <div class="mb-3">
                 <label for="title">Tên sách</label>
                 <div class="input-group">
@@ -24,12 +23,11 @@
                     <input id="price" class="form-control" type="number" formControlName="price" value="{{BookEdit.price}}"/>
                 </div>
             </div>
-        
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-outline-success" (click)="modal.close('Save click')" [disabled]="!formData.valid">Lưu thông tin</button>
-    </div>
-</form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-success" (click)="modal.close('Save click')" [disabled]="!formData.valid">Lưu thông tin</button>
+        </div>
+    </form>
 </ng-template>
 <button class="btn btn-outline-primary" (click)="open(content,'')">Thêm sách</button>
 <hr />
